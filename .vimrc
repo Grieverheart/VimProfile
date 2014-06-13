@@ -57,5 +57,6 @@ function! GuiTabLabel()
     return label
 endfunction
 
+
 set guitablabel=%{GuiTabLabel()}
 
