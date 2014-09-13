@@ -4,9 +4,9 @@ syntax on
 filetype plugin indent on
 
 if has('gui_running') 
-    colorscheme wombat
+    colorscheme monokai "wombat
 else
-    colorscheme wombat256
+    colorscheme monokai "wombat256
 endif
 
 set number
@@ -19,7 +19,10 @@ set expandtab
 set nobackup
 set nowritebackup
 
-set guifont=Inconsolata\ Medium\ 11
+set incsearch
+set hlsearch
+
+"set guifont=Inconsolata\ Medium\ 11
 
 let g:tagbar_sort=0
 
