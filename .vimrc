@@ -2,6 +2,7 @@ call pathogen#infect()
 
 syntax on
 filetype plugin indent on
+au BufNewFile,BufRead *.mako set filetype=mako
 
 if has('gui_running') 
     colorscheme monokai "wombat
