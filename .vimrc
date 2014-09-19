@@ -43,9 +43,13 @@ set hlsearch
 let mapleader=','
 
 let s:uname = system("echo -n \"$(uname)\"")
-if !v:shell_error && s:uname == "Linux"
-    set guifont=Inconsolata-g\ for\ Powerline\ Medium\ 11
-    "set guifont=Inconsolata\ Medium\ 11
+if !v:shell_error
+    if s:uname == "Linux"
+        set guifont=Inconsolata-g\ for\ Powerline\ Medium\ 11
+        "set guifont=Inconsolata\ Medium\ 11
+    elseif s:uname == "Darwin"
+        set guifont=Menlo\ Regular\ for\ Powerline:h11
+    endif
 endif
 
 "Tagbar config
