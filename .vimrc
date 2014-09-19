@@ -4,10 +4,12 @@ syntax on
 filetype plugin indent on
 au BufNewFile,BufRead *.mako set filetype=mako
 
+let g:molokai_original = 1
 if has('gui_running') 
-    colorscheme monokai "wombat
+    colorscheme molokai "wombat
 else
-    colorscheme monokai "wombat256
+    let g:rehash256 = 1
+    colorscheme molokai "wombat256
 endif
 
 set number
@@ -23,7 +25,10 @@ set nowritebackup
 set incsearch
 set hlsearch
 
-"set guifont=Inconsolata\ Medium\ 11
+let s:uname = system("echo -n \"$(uname)\"")
+if !v:shell_error && s:uname == "Linux"
+    set guifont=Inconsolata\ Medium\ 11
+endif
 
 let g:tagbar_sort=0
 
