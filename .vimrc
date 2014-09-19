@@ -5,7 +5,7 @@ filetype off
 set rtp+=~/.vim/bundle/vundle
 call vundle#begin()
 
-Plugin 'gmarik/Vundle.vim'
+Plugin 'gmarik/vundle'
 
 Plugin 'majutsushi/tagbar'
 Plugin 'godlygeek/tabular'
