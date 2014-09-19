@@ -1,4 +1,17 @@
-call pathogen#infect()
+set nocompatible
+filetype off
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'gmarik/Vundle.vim'
+
+Plugin 'majutsushi/tagbar'
+Plugin 'godlygeek/tabular'
+Plugin 'tpope/vim-surround'
+
+call vundle#end()
 
 syntax on
 filetype plugin indent on
