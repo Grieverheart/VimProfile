@@ -10,6 +10,8 @@ Plugin 'gmarik/vundle'
 Plugin 'majutsushi/tagbar'
 Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-surround'
+Plugin 'bling/vim-airline'
+Plugin 'bling/vim-bufferline'
 
 call vundle#end()
 
@@ -38,12 +40,25 @@ set nowritebackup
 set incsearch
 set hlsearch
 
+let mapleader=','
+
 let s:uname = system("echo -n \"$(uname)\"")
 if !v:shell_error && s:uname == "Linux"
-    set guifont=Inconsolata\ Medium\ 11
+    set guifont=Inconsolata-g\ for\ Powerline\ Medium\ 11
+    "set guifont=Inconsolata\ Medium\ 11
 endif
 
+"Tagbar config
+nmap <silent><leader>m : <C-U>bn<CR>
+nmap <silent><leader>M : <C-U>bp<CR>
 let g:tagbar_sort=0
+
+"Airline config
+let g:airline_powerline_fonts = 1
+"let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#fnamemod = ':t'
+set laststatus=2
+set ttimeoutlen=50
 
 set showtabline=2 " always show tabs in gvim, but not vim
 " set up tab labels with tab number, buffer name, number of windows
