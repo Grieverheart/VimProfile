@@ -20,7 +20,7 @@ filetype plugin indent on
 au BufNewFile,BufRead *.mako set filetype=mako
 
 let g:molokai_original = 1
-if has('gui_running') 
+if has('gui_running')
     colorscheme molokai "wombat
 else
     let g:rehash256 = 1
@@ -37,10 +37,14 @@ set expandtab
 set nobackup
 set nowritebackup
 
+set hidden
+
 set incsearch
 set hlsearch
 
 let mapleader=','
+nmap <silent><leader>m : <C-U>bn<CR>
+nmap <silent><leader>M : <C-U>bp<CR>
 
 let s:uname = system("echo -n \"$(uname)\"")
 if !v:shell_error
@@ -53,14 +57,14 @@ if !v:shell_error
 endif
 
 "Tagbar config
-nmap <silent><leader>m : <C-U>bn<CR>
-nmap <silent><leader>M : <C-U>bp<CR>
 let g:tagbar_sort=0
 
 "Airline config
 let g:airline_powerline_fonts = 1
-"let g:airline#extensions#tabline#enabled = 1
-"let g:airline#extensions#tabline#fnamemod = ':t'
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+let g:airline_symbols.linenr  = '¶'
 set laststatus=2
 set ttimeoutlen=50
 
@@ -97,7 +101,6 @@ function! GuiTabLabel()
     "return label . '  [' . wincount . ']'
     return label
 endfunction
-
 
 set guitablabel=%{GuiTabLabel()}
 
