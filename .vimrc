@@ -5,13 +5,14 @@ filetype off
 set rtp+=~/.vim/bundle/vundle
 call vundle#begin()
 
-Plugin 'gmarik/vundle'
+Plugin 'gmarik/vundle', {'pinned': 1}
 
 Plugin 'majutsushi/tagbar'
 Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-surround'
 Plugin 'bling/vim-airline'
 Plugin 'bling/vim-bufferline'
+Plugin 'wting/rust.vim'
 
 call vundle#end()
 
