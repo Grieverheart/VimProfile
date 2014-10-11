@@ -25,6 +25,7 @@ if has('gui_running')
     colorscheme molokai "wombat
 else
     let g:rehash256 = 1
+    set t_Co=256
     colorscheme molokai "wombat256
 endif
 
