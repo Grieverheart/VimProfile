@@ -1,8 +1,14 @@
 set nocompatible
+set enc=utf-8
 filetype off
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/vundle
+"set the runtime path to include Vundle and initialize
+if has("win32")
+    set rtp+=~/vimfiles/bundle/vundle
+else
+    set rtp+=~/.vim/bundle/vundle
+endif
+
 call vundle#begin()
 
 Plugin 'gmarik/vundle', {'pinned': 1}
@@ -48,13 +54,17 @@ let mapleader=','
 nmap <silent><leader>m : <C-U>bn<CR>
 nmap <silent><leader>M : <C-U>bp<CR>
 
-let s:uname = system("echo -n \"$(uname)\"")
-if !v:shell_error
-    if s:uname == "Linux"
-        set guifont=Inconsolata-g\ for\ Powerline\ Medium\ 11
-        "set guifont=Inconsolata\ Medium\ 11
-    elseif s:uname == "Darwin"
-        set guifont=Menlo\ Regular\ for\ Powerline:h11
+if has("win32")
+    set guifont=Consolas:h11
+else
+    let s:uname = system("echo -n \"$(uname)\"")
+    if !v:shell_error
+        if s:uname == "Linux"
+            set guifont=Inconsolata-g\ for\ Powerline\ Medium\ 11
+            "set guifont=Inconsolata\ Medium\ 11
+        elseif s:uname == "Darwin"
+            set guifont=Menlo\ Regular\ for\ Powerline:h11
+        endif
     endif
 endif
 
