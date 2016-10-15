@@ -4,6 +4,7 @@ filetype off
 
 "set the runtime path to include Vundle and initialize
 if has("win32")
+    set backspace=2
     set rtp+=~/vimfiles/bundle/vundle
 else
     set rtp+=~/.vim/bundle/vundle
