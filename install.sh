@@ -11,6 +11,6 @@ echo === Linking tmux configuration
 ln -s $PWD/.tmux.conf $HOME/.tmux.conf
 
 echo === Vundling
-gvim +BundleInstall +qall
+vim +BundleInstall +qall
 
 echo === Done
