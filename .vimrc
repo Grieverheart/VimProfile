@@ -20,6 +20,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'bling/vim-airline'
 Plugin 'bling/vim-bufferline'
 Plugin 'wting/rust.vim'
+Plugin 'kien/ctrlp.vim'
 
 call vundle#end()
 
