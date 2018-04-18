@@ -19,8 +19,8 @@ Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-surround'
 Plugin 'bling/vim-airline'
 Plugin 'bling/vim-bufferline'
-Plugin 'wting/rust.vim'
 Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-fugitive'
 
 call vundle#end()
 
@@ -81,6 +81,14 @@ endif
 let g:airline_symbols.linenr  = '¶'
 set laststatus=2
 set ttimeoutlen=50
+
+"CtrlP config
+let g:ctrlp_max_files=0
+let g:ctrlp_custom_ignore = {
+\ 'dir':  '\v[\/]\.(git|hg|svn)$',
+\ 'file': '\v\.(exe|so|dll)$',
+\ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
+\ }
 
 set showtabline=2 " always show tabs in gvim, but not vim
 " set up tab labels with tab number, buffer name, number of windows
